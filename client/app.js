@@ -44,7 +44,8 @@ async function getMessages() {
     const h3 = document.createElement("h3");
     const p = document.createElement("p");
 
-    likeButton.src = "./thumb-up-icon.png";
+    likeButton.src =
+      "https://raw.githubusercontent.com/mrskisawesome/The-Kemptons-Message-board-/main/client/thumb-up-icon.png";
     //likeButton.onClick = handleLike
     likeButton.classList.add("like-button"); // Add a class
     likeButton.on;
