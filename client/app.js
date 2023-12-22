@@ -10,13 +10,16 @@ form.addEventListener("submit", async function (event) {
   const formValues = Object.fromEntries(formData);
 
   // Send the message to the server
-  const response = await fetch("https://kemptonsmessageboard.onrender.com", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formValues),
-  });
+  const response = await fetch(
+    "https://kemptonsmessageboard.onrender.com/messages",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formValues),
+    }
+  );
 
   const json = await response.json();
 
@@ -30,7 +33,9 @@ form.addEventListener("submit", async function (event) {
 
 async function getMessages() {
   // Fetch message from the server
-  const response = await fetch("https://kemptonsmessageboard.onrender.com");
+  const response = await fetch(
+    "https://kemptonsmessageboard.onrender.com/messages"
+  );
   const messages = await response.json();
 
   // Render the fetched messages
