@@ -11,31 +11,31 @@ app.get("/", function (request, response) {
   response.json("You are looking at root route. How roude!");
 });
 
-//sets up a route on a web server that listens for POST requests to path/jokes
-app.get("/jokes", function (request, response) {
+//sets up a route on a web server that listens for POST requests to path/messages
+app.get("/messages", function (request, response) {
   console.log(request.body);
-  //retrieves jokes from my database and prepares a SQL query to select all from the table jokes
-  const jokes = db.prepare("SELECT * FROM jokes").all();
-  //sends a JSON response back to the client which contains the json form of the jokes array
-  response.json(jokes);
+  //retrieves messages from my database and prepares a SQL query to select all from the table messages
+  const messages = db.prepare("SELECT * FROM messages").all();
+  //sends a JSON response back to the client which contains the json form of the message array
+  response.json(messages);
 });
 
-//set up a route to handle POST requests to the /jokes endpoint
-app.post("/jokes", function (request, response) {
+//set up a route to handle POST requests to the /messages endpoint
+app.post("/messages", function (request, response) {
   console.log(request.body);
   console.log("BEFORE");
-  //finds the data from the body which is the setup of the joke
-  const setup = request.body.setup;
-  //finds the data from the body which is the punchline of the joke
-  const punchline = request.body.punchline;
-  //prepares a SQL query to insert a new row into the "jokes" table, with ?,? placeholders for the setup and punchline values
-  //stored in newJoke
-  const newJoke = db
-    .prepare(`INSERT INTO jokes (setup, punchline) VALUES (?,?)`)
-    .run(setup, punchline);
-  console.log("newJoke", newJoke);
+  //finds the data from the body which is the writer of the message
+  const name = request.body.name;
+  //finds the data from the body which is the punchline of the message
+  const message = request.body.message;
+  //prepares a SQL query to insert a new row into the "messages" table, message punchline values
+  //stored in newMessage
+  const newMessage = db
+    .prepare(`INSERT INTO messages (name, message) VALUES (?,?)`)
+    .run(name, message);
+  console.log("newMessage", newMessage);
   //sends a json response back to the client
-  response.json(newJoke);
+  response.json(newMessage);
 });
 
 app.listen(8080, function () {

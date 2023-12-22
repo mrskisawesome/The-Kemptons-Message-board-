@@ -9,14 +9,18 @@
     <script src="./app.js" defer type="module"></script>
   </head>
   <body>
-    <h1>My Joke Machine</h1>
-    <form id="jokeForm">
-      <label>Setup</label>
-      <input name="setup" placeholder="Setup" required />
-      <label>Punchline</label>
-      <input name="punchline" placeholder="punchline" required />
-      <button>Add your Joke</button>
+    <div>
+      <h1>Thank you for visting the Kemptons'</h1>
+      <h2>Please leave a message for future visitors!</h2>
+    </div>
+    <form id="messageBoard">
+      <div><img src="./home.png" /></div>
+      <label>Name</label>
+      <input name="name" placeholder="Name" required />
+      <label>Your message</label>
+      <input name="message" placeholder="message" required />
+      <button>Thank you - now submit your message</button>
     </form>
-    <div id="jokeContainer"></div>
+    <div id="messageContainer"></div>
   </body>
 </html>
