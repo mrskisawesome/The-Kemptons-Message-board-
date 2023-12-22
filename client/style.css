@@ -115,6 +115,7 @@ img {
 @media (max-width: 768px) {
   body {
     font-family: sans-serif;
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,6 +133,8 @@ img {
   }
   h1,
   h2 {
+    display: flex;
     align-items: center;
+    font-size: 1rem;
   }
 }

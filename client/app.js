@@ -1,6 +1,6 @@
 const form = document.getElementById("messageBoard");
 const messageContainer = document.getElementById("messageContainer"); // Obtain messageContainer DOM element upfront
-
+//const like-button = document.querySelector
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
   const myDiv = document.getElementById("messageContainer");
@@ -10,7 +10,7 @@ form.addEventListener("submit", async function (event) {
   const formValues = Object.fromEntries(formData);
 
   // Send the message to the server
-  const response = await fetch("http://localhost:8080/messages", {
+  const response = await fetch("https://kemptonsmessageboard.onrender.com", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -30,7 +30,7 @@ form.addEventListener("submit", async function (event) {
 
 async function getMessages() {
   // Fetch message from the server
-  const response = await fetch("http://localhost:8080/messages");
+  const response = await fetch("https://kemptonsmessageboard.onrender.com");
   const messages = await response.json();
 
   // Render the fetched messages
@@ -42,6 +42,7 @@ async function getMessages() {
     likeButton.src = "./thumb-up-icon.png";
     //likeButton.onClick = handleLike
     likeButton.classList.add("like-button"); // Add a class
+    likeButton.on;
     h3.textContent = message.name;
     p.textContent = message.message;
 
