@@ -134,7 +134,6 @@ img {
   @media (max-width: 425px) {
     h1,
     h2 {
-      display: flex;
       align-items: center;
       font-size: 1rem;
     }
