@@ -35,12 +35,17 @@ async function getMessages() {
 
   // Render the fetched messages
   messages.forEach(function (message) {
-    //const likeButton = document.createElement("button");
-    //likeButton.textContent = "Like";
+    const likeButton = document.createElement("img");
     const h3 = document.createElement("h3");
     const p = document.createElement("p");
+
+    likeButton.src = "./thumb-up-icon.png";
+    //likeButton.onClick = handleLike
+    likeButton.classList.add("like-button"); // Add a class
     h3.textContent = message.name;
     p.textContent = message.message;
+
+    messageContainer.appendChild(likeButton);
     messageContainer.appendChild(h3);
     messageContainer.appendChild(p);
   });

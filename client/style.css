@@ -17,12 +17,14 @@ h2 {
 h1 {
   position: absolute;
   top: 5px;
-  left: 5px;
+  left: 15px;
+  font-size: 1.6rem;
 }
 h2 {
   position: absolute;
   top: 80px;
-  left: 5px;
+  left: 15px;
+  font-size: 1.1rem;
 }
 label {
   color: #323f49;
@@ -63,7 +65,7 @@ input {
   margin-bottom: 10px;
 }
 
-button {
+.submit {
   background-color: #cdd6dd;
   color: #cd8987;
   padding: 10px 20px;
@@ -75,6 +77,41 @@ img {
   opacity: 10%;
   width: 300px;
 }
+
+.like-button {
+  /* Overall styling */
+  display: inline-flex; /* Maintain a consistent height-width ratio */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  padding: 0px; /* Add spacing around content */
+  border: none; /* Remove default border */
+  border-radius: 50%; /* Make it circular */
+  cursor: pointer; /* Indicate interactivity */
+  font-weight: bold; /* Emphasize text */
+  /* Base colors */
+  width: 8%;
+}
+/* Hover effect 
+.likebutton:hover {
+  background-color: #e0e0e0; /* Slightly darker gray on hover 
+}*/
+
+/* Active state 
+.likebutton:active {
+  background-color: #d0d0d0; /* Even darker gray when pressed 
+}*/
+
+/* Styling for the "thumb up" icon 
+.likebutton:before {
+  content: "";
+  display: inline-block; /* Ensure it takes up space
+  margin-right: 5px; /* Add spacing between icon and text 
+  width: 2px; /* Adjust icon size 
+  height: 2px;
+
+  background-size: cover; /* Scale icon to fill space 
+}*/
+
 @media (max-width: 768px) {
   body {
     font-family: sans-serif;
@@ -87,7 +124,14 @@ img {
   }
   #messageBoard,
   #messageContainer {
-    width: 100%;
+    width: 80%;
     margin-top: 5px;
+  }
+  #messageBoard {
+    height: 20%;
+  }
+  h1,
+  h2 {
+    align-items: center;
   }
 }
